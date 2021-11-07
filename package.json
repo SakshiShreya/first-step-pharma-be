@@ -1,0 +1,38 @@
+{
+  "name": "first-step-pharma-be",
+  "version": "1.0.0",
+  "description": "Backend for first step pharma",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SakshiShreya/first-step-pharma-be.git"
+  },
+  "author": "Sakshi Shreya <shreyasakshi96@gmail.com> (https://sakshishreya.github.io/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SakshiShreya/first-step-pharma-be/issues"
+  },
+  "homepage": "https://github.com/SakshiShreya/first-step-pharma-be#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.26.1"
+  }
+}
