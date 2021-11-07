@@ -15,7 +15,7 @@ mongoose
     useNewUrlParser: true,
   })
   // eslint-disable-next-line no-console
-  .then(() => console.log("DB connection successfull"));
+  .then(() => console.log("DB connection successful"));
 
 // CONNECT EXPRESS
 const PORT = process.env.PORT || 3000;
