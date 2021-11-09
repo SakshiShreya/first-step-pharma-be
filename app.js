@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const compression = require("compression");
 const swaggerUi = require("swagger-ui-express");
 const servicesRoutes = require("./routes/serviceRoutes");
-const swaggerDocument = require("./docs/basicInfo");
+const swaggerDocument = require("./docs/index");
 
 const app = express();
 
