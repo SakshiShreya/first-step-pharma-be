@@ -15,6 +15,7 @@ module.exports = {
   },
   servers: [
     { url: "http://localhost:8000/api/v1", description: "Local server" },
+    { url: "https://first-step-pharma.herokuapp.com/api/v1", description: "Heroku Prod" },
   ],
   paths: {
     ...ServicesPaths,
