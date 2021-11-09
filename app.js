@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+const compression = require("compression");
 const swaggerUi = require("swagger-ui-express");
 const servicesRoutes = require("./routes/serviceRoutes");
 const swaggerDocument = require("./docs/basicInfo");
@@ -20,6 +21,9 @@ app.use(
   swaggerUi.serve,
   swaggerUi.setup(swaggerDocument, options),
 );
+
+app.use(compression());
+
 app.use("/api/v1/services", servicesRoutes);
 
 // EXPORT
