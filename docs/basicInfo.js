@@ -1,5 +1,5 @@
 const { Schemas } = require("./schemas");
-const { ServicesMethods } = require("./services");
+const { ServicesPaths } = require("./services");
 
 module.exports = {
   openapi: "3.0.1",
@@ -17,7 +17,7 @@ module.exports = {
     { url: "http://localhost:8000/api/v1", description: "Local server" },
   ],
   paths: {
-    "/services": ServicesMethods,
+    ...ServicesPaths,
   },
   components: {
     schemas: Schemas,

@@ -1,1 +1,0 @@
-exports.ServicesTag = "Services";
