@@ -1,7 +1,9 @@
 const express = require("express");
 const morgan = require("morgan");
 const compression = require("compression");
+const swaggerUi = require("swagger-ui-express");
 const servicesRoutes = require("./routes/serviceRoutes");
+const swaggerDocument = require("./docs/index");
 
 const app = express();
 
@@ -12,6 +14,13 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 app.use(express.json());
+
+const options = { explorer: true, swaggerOptions: { validatorUrl: null } };
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocument, options),
+);
 
 app.use(compression());
 
