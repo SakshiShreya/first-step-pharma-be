@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const compression = require("compression");
 const swaggerUi = require("swagger-ui-express");
 const servicesRoutes = require("./routes/serviceRoutes");
+const aboutRoutes = require("./routes/aboutRoutes");
 const swaggerDocument = require("./docs/index");
 const AppError = require("./utils/appError");
 const globalErrorHandler = require("./controllers/errorController");
@@ -31,6 +32,7 @@ app.use(compression());
 
 // 5. Routes
 app.use("/api/v1/services", servicesRoutes);
+app.use("/api/v1/aboutme", aboutRoutes);
 
 // 6. Error handling
 app.all("*", (req, res, next) => {
