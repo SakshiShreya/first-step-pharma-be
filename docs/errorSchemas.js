@@ -10,22 +10,24 @@ exports.ErrorSchema = {
   },
 };
 
-exports.NotFound404 = {
-  description: "404 Not Found",
-  content: {
-    "application/json": {
-      schema: {
-        $ref: "#/components/schemas/Error",
-      },
-      example: {
-        message: "Some String",
-        status: "fail",
-      },
+const content = {
+  "application/json": {
+    schema: {
+      $ref: "#/components/schemas/Error",
+    },
+    example: {
+      message: "Some String",
+      status: "fail",
     },
   },
 };
 
-exports.BadRequest400 = {
-  description: "400 Bad Request",
-  content: { ...this.NotFound404.content },
-};
+exports.NotFound404 = (desc) => ({
+  description: desc || "404 Not Found",
+  content,
+});
+
+exports.BadRequest400 = (desc) => ({
+  description: desc || "400 Bad Request",
+  content,
+});

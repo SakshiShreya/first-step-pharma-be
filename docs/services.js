@@ -76,7 +76,7 @@ const GetMethod = {
         },
       },
     },
-    404: NotFound404,
+    // 404: NotFound404(),
   },
 };
 
@@ -110,7 +110,8 @@ const GetFromIdMethod = {
         },
       },
     },
-    404: NotFound404,
+    404: NotFound404("Id not found"),
+    400: BadRequest400("Id format is wrong"),
   },
 };
 
@@ -146,7 +147,7 @@ const PostMethod = {
         },
       },
     },
-    400: BadRequest400,
+    400: BadRequest400("Duplicate name is used OR Some validation failed"),
   },
 };
 
@@ -184,7 +185,10 @@ const UpdateMethod = {
         },
       },
     },
-    400: BadRequest400,
+    404: NotFound404("Id not found"),
+    400: BadRequest400(
+      "Id format is wrong OR Duplicate name is used OR Some validation failed",
+    ),
   },
 };
 
@@ -224,7 +228,8 @@ const DeleteMethod = {
         },
       },
     },
-    400: BadRequest400,
+    404: NotFound404("Id not found"),
+    400: BadRequest400("Id format is wrong"),
   },
 };
 
