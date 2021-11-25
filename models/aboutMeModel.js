@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const aboutSchema = new mongoose.Schema({
+const aboutMeSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "Name is required"],
@@ -15,6 +15,6 @@ const aboutSchema = new mongoose.Schema({
   },
 });
 
-const About = mongoose.model("About", aboutSchema);
+const AboutMe = mongoose.model("AboutMe", aboutMeSchema);
 
-module.exports = About;
+module.exports = AboutMe;

@@ -1,3 +1,4 @@
+const { AboutMeSchema } = require("./aboutMe");
 const { ErrorSchema } = require("./errorSchemas");
 const { SubServicesSchema, ServiceSchema } = require("./services");
 
@@ -9,6 +10,7 @@ const MongoIdSchema = {
 exports.Schemas = {
   SubService: SubServicesSchema,
   Service: ServiceSchema(true),
+  AboutMe: AboutMeSchema(true),
   MongoId: MongoIdSchema,
   Error: ErrorSchema,
 };
