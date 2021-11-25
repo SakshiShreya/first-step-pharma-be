@@ -2,6 +2,9 @@ const { NotFound404, BadRequest400 } = require("./errorSchemas");
 
 const ServicesTag = "Services";
 
+/**
+ * @param {boolean} showId Pass true if id needs to be shown
+ */
 const ServiceSchema = (showId) => {
   const properties = {
     _id: {
@@ -11,6 +14,13 @@ const ServiceSchema = (showId) => {
       type: "string",
       required: true,
       example: "Service1",
+    },
+    order: {
+      type: "number",
+      required: true,
+      example: 1,
+      description:
+        "Order in which services should be shown. Lowest number will be shown first",
     },
     subServices: {
       type: "array",
@@ -249,9 +259,6 @@ exports.ServicesPaths = {
   "/services/{id}": ServicesIdMethods,
 };
 
-/**
- * @param {boolean} showId Pass true if id needs to be shown
- */
 exports.ServiceSchema = ServiceSchema;
 
 exports.SubServicesSchema = {
@@ -260,6 +267,14 @@ exports.SubServicesSchema = {
     name: {
       type: "string",
       example: "SubService1",
+      required: true,
+    },
+    order: {
+      description:
+        "Order in which subservices should be shown. Lowest number will be shown first",
+      type: "number",
+      example: 1,
+      required: true,
     },
   },
 };
