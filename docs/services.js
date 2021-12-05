@@ -71,14 +71,9 @@ const GetMethod = {
                 example: 1,
               },
               data: {
-                type: "object",
-                properties: {
-                  services: {
-                    type: "array",
-                    items: {
-                      $ref: "#/components/schemas/Service",
-                    },
-                  },
+                type: "array",
+                items: {
+                  $ref: "#/components/schemas/Service",
                 },
               },
             },
@@ -86,7 +81,6 @@ const GetMethod = {
         },
       },
     },
-    // 404: NotFound404(),
   },
 };
 
@@ -108,12 +102,7 @@ const GetFromIdMethod = {
                 example: "success",
               },
               data: {
-                type: "object",
-                properties: {
-                  service: {
-                    $ref: "#/components/schemas/Service",
-                  },
-                },
+                $ref: "#/components/schemas/Service",
               },
             },
           },
@@ -145,12 +134,7 @@ const PostMethod = {
                 example: "success",
               },
               data: {
-                type: "object",
-                properties: {
-                  service: {
-                    $ref: "#/components/schemas/Service",
-                  },
-                },
+                $ref: "#/components/schemas/Service",
               },
             },
           },
@@ -183,12 +167,7 @@ const UpdateMethod = {
                 example: "success",
               },
               data: {
-                type: "object",
-                properties: {
-                  service: {
-                    $ref: "#/components/schemas/Service",
-                  },
-                },
+                $ref: "#/components/schemas/Service",
               },
             },
           },

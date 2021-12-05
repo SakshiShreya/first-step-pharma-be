@@ -9,7 +9,7 @@ exports.getAllServices = catchAsync(async (req, res) => {
     status: "success",
     requestedAt: req.requestTime,
     results: services.length,
-    data: { services },
+    data: services,
   });
 });
 
@@ -22,7 +22,7 @@ exports.getService = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: "success",
-    data: { service },
+    data: service,
   });
 });
 
@@ -31,7 +31,7 @@ exports.createService = catchAsync(async (req, res) => {
 
   res.status(201).json({
     status: "success",
-    data: { service: newService },
+    data: newService,
   });
 });
 
@@ -47,7 +47,7 @@ exports.updateService = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: "success",
-    data: { service },
+    data: service,
   });
 });
 
