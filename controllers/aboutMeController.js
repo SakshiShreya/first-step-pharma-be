@@ -13,7 +13,7 @@ exports.getAboutMe = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: "success",
-    data: { aboutMe },
+    data: aboutMe,
   });
 });
 
@@ -29,6 +29,6 @@ exports.updateAboutMe = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: "success",
-    data: { aboutMe },
+    data: aboutMe,
   });
 });

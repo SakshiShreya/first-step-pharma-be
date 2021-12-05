@@ -2,6 +2,18 @@ const { AboutMePaths } = require("./aboutMe");
 const { Schemas } = require("./schemas");
 const { ServicesPaths } = require("./services");
 
+const servers = [];
+if (process.env.NODE_ENV === "development") {
+  servers.push({
+    url: "http://localhost:8000/api/v1",
+    description: "Local server",
+  });
+}
+servers.push({
+  url: "https://first-step-pharma.herokuapp.com/api/v1",
+  description: "Heroku Prod",
+});
+
 module.exports = {
   openapi: "3.0.1",
   info: {
@@ -14,13 +26,7 @@ module.exports = {
       url: "https://sakshishreya.github.io",
     },
   },
-  servers: [
-    { url: "http://localhost:8000/api/v1", description: "Local server" },
-    {
-      url: "https://first-step-pharma.herokuapp.com/api/v1",
-      description: "Heroku Prod",
-    },
-  ],
+  servers,
   paths: {
     ...ServicesPaths,
     ...AboutMePaths,

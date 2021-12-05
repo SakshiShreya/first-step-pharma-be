@@ -68,12 +68,7 @@ const GetMethod = {
                 example: "success",
               },
               data: {
-                type: "object",
-                properties: {
-                  aboutMe: {
-                    $ref: "#/components/schemas/AboutMe",
-                  },
-                },
+                $ref: "#/components/schemas/AboutMe",
               },
             },
           },
@@ -105,12 +100,7 @@ const UpdateMethod = {
                 example: "success",
               },
               data: {
-                type: "object",
-                properties: {
-                  aboutMe: {
-                    $ref: "#/components/schemas/AboutMe",
-                  },
-                },
+                $ref: "#/components/schemas/AboutMe",
               },
             },
           },
